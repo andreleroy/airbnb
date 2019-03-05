@@ -2,7 +2,11 @@
   <% @listings.each do |listing| %>
     <%= link_to listing_path(listing), :action => 'go' do %>
     <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      <% if listing.photos.any? %>
+        <%= cl_image_tag listing.photos.first.url, :gravity=>"auto", :height=>1143, :quality=>"auto", :width=>2763, :crop=>"fill" %>
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+      <% end %>
       <div class="card-trip-infos">
         <div>
           <p class="small-grey-upcase"><%= listing.property_type.upcase %></p>
