@@ -1,0 +1,18 @@
+.listing-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bookingform {
+  width: 30%;
+  height: 300px;
+  border: 1px solid #000000;
+  padding: 10px;
+  margin: 10px;
+}
+.listing-info {
+  width: 60%;
+  height: 300px;
+  border: 1px solid #fdfdfd;
+  padding: 10px
+}
