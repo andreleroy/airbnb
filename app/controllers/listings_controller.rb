@@ -12,10 +12,12 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.create(listing_params)
+    # new and save = create
+    @listing = Listing.new(listing_params)
+
     @listing.user = current_user
     if @listing.save
-      redirect_to listing_path(@listing)
+      redirect_to listing_photos_path(@listing)
     else
       render :new
     end
@@ -24,7 +26,7 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :description, :property_type, :capacity, :address, :nightly_rate)
+    params.require(:listing).permit(:name, :description, :property_type, :capacity, :address, :nightly_rate, { photos: []})
   end
 
 end
