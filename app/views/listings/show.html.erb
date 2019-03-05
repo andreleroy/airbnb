@@ -1,6 +1,28 @@
-<h1>Listings#show</h1>
 
-<%= @listing.photos.count %>
-<% @listing.photos.each do |photo| %>
-<%= cl_image_tag photo %>
-<% end %>
+<div class="container navbar-padding">
+  <%= render 'shared/static_listing_banner' %>
+  <div class="listing-page">
+    <div class="listing-info">
+      <div class="primary-info">
+      <h5><%= @listing.property_type.upcase %></h5>
+      <h2><%= @listing.name %></h2>
+      <p><%= @listing.description %></p>
+      <p><strong>Address:</strong> <%= @listing.address %></p>
+      </div>
+      <div class="secondary-info">
+        <h3>About the property...</h3>
+        <ul>
+          <li><p>Traditionally styled, bright and beautiful flat</p></li>
+          <li><p>Slap bang in the middle of the city of Love</p></li>
+          <li><p>Can host <%= @listing.capacity %> guests comfortably</p></li>
+        </ul>
+      </div>
+      <div class="view-map">
+
+      </div>
+    </div>
+    <div class="bookingform">
+      <h4>$<%= @listing.nightly_rate %> per night</h4>
+  </div>
+  </div>
+</div>
