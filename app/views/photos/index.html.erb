@@ -1,0 +1,11 @@
+<% @listing.photos.each do |photo| %>
+  <%= cl_image_tag photo.url %>
+<% end %>
+<h3>I AM HIDDEN BELOW THE NAVBAR</h3>
+<%= simple_form_for [@listing, @photo] do |f| %>
+  <%= f.file_field :url %>
+  <%= f.input :url_cache, as: :hidden %>
+  <%= f.submit 'Add image' %>
+<% end %>
+
+<button>Finished uploading! See my flat !!!!!! </button>

@@ -1,2 +1,6 @@
 <h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+
+<%= @listing.photos.count %>
+<% @listing.photos.each do |photo| %>
+<%= cl_image_tag photo %>
+<% end %>
