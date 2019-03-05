@@ -1,0 +1,9 @@
+<%= simple_form_for(@cocktail) do |r| %>
+    <div class="form-group">
+      <%= r.label :name %>
+      <%= r.text_field :name, class: 'form-control' %>
+      <%= r.input :photo %>
+      <%= r.input :photo_cache, as: :hidden %>
+    </div>
+  <%= r.submit class: 'btn btn-primary' %>
+<% end %>
