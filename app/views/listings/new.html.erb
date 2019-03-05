@@ -1,2 +1,29 @@
-<h1>Listings#new</h1>
-<p>Find me in app/views/listings/new.html.erb</p>
+<h1>Create your listing here </h1>
+
+<% if @listing.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @listing.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= simple_form_for @listing do |f| %>
+
+  <%= f.input :name %>
+
+  <%= f.input :description %>
+
+  <%= f.input :property_type, collection: ["Apartment", "House", "Secondary unit", "Unique space", "Bed and breakfast", "Boutique hotel"] %>
+
+  <%= f.input :capacity %>
+
+  <%= f.input :address %>
+
+  <%= f.input :nightly_rate %>
+
+  <%= f.button :submit %>
+
+<% end %>
