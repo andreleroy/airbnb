@@ -1,5 +1,4 @@
 class Listing < ApplicationRecord
-  serialize :avatars, JSON
   belongs_to :user
   has_many :bookings
   has_many :photos
