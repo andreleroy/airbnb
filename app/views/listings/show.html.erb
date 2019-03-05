@@ -1,5 +1,16 @@
-<div class="container">
-  <div></div>
-  <h1> <%= @listing.name %> </h1>
-  <h4> <%= @listing.description %> </h4>
+
+<div class="container navbar-padding">
+  <%= render 'shared/static_listing_banner' %>
+  <div class="listing-page">
+    <div class="listing-info">
+      <h5> <%= @listing.property_type %> </h5>
+      <h2> <%= @listing.name %> </h2>
+      <p> <%= @listing.description %> </p>
+    </div>
+    <div class="bookingform">
+      <h4> $<%= @listing.nightly_rate %> per night</h4>
+      <h6>From: [ 12 / 12 / 2019 ]</h6>
+      <h6>To: [ 2 / 1 / 2020 ]</h6>
+  </div>
+  </div>
 </div>
