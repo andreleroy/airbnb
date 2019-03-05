@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Listing.delete_all
+
+Listing.create(name: "Amazing flat in Paris", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus facere, velit accusamus nisi eveniet enim alias odit expedita quisquam, obcaecati debitis quam similique atque mollitia. Excepturi nostrum, provident necessitatibus eaque minus dignissimos culpa a voluptas laudantium repudiandae. A harum neque maiores commodi eaque modi exercitationem fuga, enim. Ipsa, aut, ducimus.", listing_type: "Flat", capacity: 4, address: "50 rue Montmartre, 75008 Paris", nightly_rate: 400)
+
+Listing.create(name: "Large house in Barcelona", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus facere, velit accusamus nisi eveniet enim alias odit expedita quisquam, obcaecati debitis quam similique atque mollitia. Excepturi nostrum, provident necessitatibus eaque minus dignissimos culpa a voluptas laudantium repudiandae. A harum neque maiores commodi eaque modi exercitationem fuga, enim. Ipsa, aut, ducimus.", listing_type: "Flat", capacity: 10, address: "25 carrer del Riu del Or, 08034 Barcelona", nightly_rate: 800)
+
+Listing.create(name: "Loft in Saint Germain", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus facere, velit accusamus nisi eveniet enim alias odit expedita quisquam, obcaecati debitis quam similique atque mollitia. Excepturi nostrum, provident necessitatibus eaque minus dignissimos culpa a voluptas laudantium repudiandae. A harum neque maiores commodi eaque modi exercitationem fuga, enim. Ipsa, aut, ducimus.", listing_type: "Flat", capacity: 10, address: "50 boulevard Saint Germain, 75005 Paris", nightly_rate: 800)
