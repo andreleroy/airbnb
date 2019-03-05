@@ -1,0 +1,13 @@
+<script>
+  const initMap() {
+    // Create a map object and specify the DOM element for display.
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: <%= @listing.latitude %>, lng: <%= @listing.longitude %>},
+      scrollwheel: false,
+      zoom: 8
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+</script>
