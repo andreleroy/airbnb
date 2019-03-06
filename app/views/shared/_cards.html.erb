@@ -13,7 +13,11 @@
           <h2 id="listing-name"><%= listing.name %></h2>
         </div>
         <h2 class="card-trip-pricing"><%= listing.nightly_rate %> €</h2>
-        <%= image_tag "agustin.jpeg", class: "card-trip-user avatar-bordered" %>
+        <% if listing.user.photo.url.nil? %>
+        <%= image_tag "agustin.jpg", class: "card-trip-user avatar-bordered" %>
+        <% else %>
+        <%= image_tag listing.user.photo.url, class: "card-trip-user avatar-bordered" %>
+        <% end %>
       </div>
     </div>
     <% end %>
