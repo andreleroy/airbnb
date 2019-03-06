@@ -1,5 +1,4 @@
 class PhotosController < ApplicationController
-
   def index
     @listing = Listing.find(params[:listing_id])
     @photo = Photo.new
