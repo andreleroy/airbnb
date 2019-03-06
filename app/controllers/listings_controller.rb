@@ -5,6 +5,13 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    # @map = Listing.where.not(latitude: nil, longitude: nil)
+
+    @marker =
+      {
+        lng: @listing.longitude,
+        lat: @listing.latitude
+      }
   end
 
   def new
