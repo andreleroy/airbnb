@@ -16,7 +16,7 @@
         <% if listing.user.photo.url.nil? %>
         <%= image_tag "agustin.jpg", class: "card-trip-user avatar-bordered" %>
         <% else %>
-        <%= image_tag listing.user.photo.url, class: "card-trip-user avatar-bordered" %>
+        <%= cl_image_tag listing.user.photo.url, :gravity=>"auto", :height=>40, :quality=>"auto", :width=>40, :crop=>"fill", class: "card-trip-user avatar-bordered" %>
         <% end %>
       </div>
     </div>
