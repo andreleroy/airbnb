@@ -1,9 +1,8 @@
-<div class="container">
-  <%= simple_form_for[@listing, @booking] do |f| %>
-  <%= f.input :checkin_date, as: :date %>
-  <%= f.input :checkout_date, as: :date %>
-  <%= f.input :guests_number, as: :integer %>
+<%= simple_form_for @booking do |f| %>
+<%= f.input :checkin_date, as: :date %>
+<%= f.input :checkout_date, as: :date %>
+<%= f.input :guests_number %>
+<%= f.hidden_field :listing_id, value: @listing.id %>
+<%= f.button :submit, value: "Next step" %>
+<% end %>
 
-  <%= f.button :submit %>
-  <% end %>
-</div>

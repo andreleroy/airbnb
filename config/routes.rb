@@ -4,12 +4,10 @@ Rails.application.routes.draw do
   root to: 'listings#index'
   resources :listings, only: [:index, :show, :new, :create] do
     resources :photos, only: [ :create, :destroy, :index ]
-    resources :bookings, only: [ :new, :create, :edit, :update]
   end
-  resources :bookings, only: [ :index]
+  resources :bookings, only: [ :index, :create, :edit, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
 
 
 
@@ -34,16 +32,15 @@ end
 #            listing_photos GET    /listings/:listing_id/photos(.:format)                                                   photos#index
 #                           POST   /listings/:listing_id/photos(.:format)                                                   photos#create
 #             listing_photo DELETE /listings/:listing_id/photos/:id(.:format)                                               photos#destroy
-#          listing_bookings POST   /listings/:listing_id/bookings(.:format)                                                 bookings#create
-#       new_listing_booking GET    /listings/:listing_id/bookings/new(.:format)                                             bookings#new
-#      edit_listing_booking GET    /listings/:listing_id/bookings/:id/edit(.:format)                                        bookings#edit
-#           listing_booking PATCH  /listings/:listing_id/bookings/:id(.:format)                                             bookings#update
-#                           PUT    /listings/:listing_id/bookings/:id(.:format)                                             bookings#update
 #                  listings GET    /listings(.:format)                                                                      listings#index
 #                           POST   /listings(.:format)                                                                      listings#create
 #               new_listing GET    /listings/new(.:format)                                                                  listings#new
 #                   listing GET    /listings/:id(.:format)                                                                  listings#show
 #                  bookings GET    /bookings(.:format)                                                                      bookings#index
+#                           POST   /bookings(.:format)                                                                      bookings#create
+#              edit_booking GET    /bookings/:id/edit(.:format)                                                             bookings#edit
+#                   booking PATCH  /bookings/:id(.:format)                                                                  bookings#update
+#                           PUT    /bookings/:id(.:format)                                                                  bookings#update
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
