@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for[@listing, @booking] do |f| %>
+  <%= f.input :checkin_date, as: :date %>
+  <%= f.input :checkout_date, as: :date %>
+  <%= f.input :guests_number, as: :integer %>
+
+  <%= f.button :submit %>
+  <% end %>
+</div>
