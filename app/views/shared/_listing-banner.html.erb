@@ -1,2 +1,31 @@
-<div class="listingbanner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @listing.photos.first.url, :gravity=>"auto", :height=>1143, :quality=>"auto", :width=>2763, :crop=>"fill" %>')">
+<div class="carousel-container">
+  <div id="photos-carousel" class="carousel slide" data-ride="carousel" style="">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% @listing.photos.count.times do |count| %>
+        <li data-target="#photos-carousel" data-slide-to="<%= count %>" class="<%= 'active' if count == 0 %>"></li>
+      <% end %>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <% @listing.photos.each_with_index do |photo, index| %>
+        <div class="item <%= 'active' if index == 0 %>">
+          <%= cl_image_tag photo.url, class: "image-size" %>
+          <div class="carousel-caption">
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#photos-carousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#photos-carousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
