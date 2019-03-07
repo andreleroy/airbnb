@@ -1,6 +1,6 @@
 <%= simple_form_for @booking do |f| %>
-<%= f.input :checkin_date, as: :date %>
-<%= f.input :checkout_date, as: :date %>
+<%= f.input :checkin_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+<%= f.input :checkout_date, as: :string, required: false, input_html: {class: "datepicker"} %>
 <%= f.input :guests_number %>
 <%= f.hidden_field :listing_id, value: @listing.id %>
 <%= f.button :submit, value: "Next step" %>
