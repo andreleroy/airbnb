@@ -8,33 +8,11 @@
         <a href="#" class="tab">Hosting</a>
       </div>
 
-      <ul class="inbox">
-        <li class="message">
-
-
-            <h3>Gab Dehan</h3>
-            <p class="fade-font">10/07/17</p>
-          </div>
-
-          <% @bookings.each do |booking| %>
-            <% if booking.user.photo.url.nil? %>
-              <%= image_tag "agustin.jpg", class: "avatar-sm" %>
-            <% else %>
-              <%= cl_image_tag booking.user.photo.url, class: "avatar-sm" %>
-            <% end %>
-          <div class="user">
-            <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-            <p class="fade-font">booking.checkin_date</p>
-          </div>
-          <div class="user-message">
-            <p class="bold">booking.trip_details.first(5)</p>
-            <p class="fade-font">booking.trip_details</p>
-          </div>
-          <div class="user-status">
-            <p class="bold pending"><%= booking.status %></p>
-            <p><%= booking.total_price %></p>
-          </div>
-        </li>
-        <% end %>
+      <ul class="inbox" style="padding-left: 0px,
+        list-style: none,
+        border: 1px solid #dce0e0,
+        padding: 0 20px,
+        margin: 0">
+        <%= render 'shared/inbox_card' %>
       </ul>
     </div>
