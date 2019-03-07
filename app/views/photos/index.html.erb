@@ -1,4 +1,4 @@
-<div class="container navbar-padding">
+<div class="container">
   <div class="row">
     <div class="cards">
       <% @listing.photos.each do |photo| %>
@@ -8,15 +8,18 @@
       <% end %>
     </div>
     <div class="col-xs-12 col-md-6">
+      <div class="form">
       <%= simple_form_for [@listing, @photo] do |f| %>
         <%= f.file_field :url %>
         <%= f.input :url_cache, as: :hidden %>
-        <%= f.submit 'Add image' %>
+        <%= f.submit 'Add image', class: 'airbnb-btn button-padding' %>
       <% end %>
+      </div>
+      <div class="button-padding">
+        <%= link_to 'See listing', listing_path(@listing), class: 'airbnb-btn-secondary' %>
+      </div>
     </div>
-    <button>
-      <%= link_to 'See listing', listing_path(@listing) %>
-    </button>
+
   </div>
 </div>
 

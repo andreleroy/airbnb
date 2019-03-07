@@ -2,7 +2,7 @@
   <%= simple_form_for @booking do |f| %>
   <%= f.input :trip_details, as: :text, placeholder: "Tell your host more about your trip" %>
 
-  <%= f.button :submit, value: "Complete booking" %>
+  <%= f.button :submit, value: "Complete booking", class: 'airbnb-btn' %>
   <% end %>
 
 

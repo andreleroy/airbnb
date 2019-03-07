@@ -6,12 +6,15 @@
       <% else %>
         <%= cl_image_tag booking.user.photo.url, class: "user-avatar" %>
       <% end %>
+      <h3><%= booking.user.first_name %></h3>
     </div>
     <div class="user">
-      <h3><%= booking.user.first_name %></h3>
-      <p class="fade-font"><%= booking.checkin_date %></p>
+      <p><strong>from: <%= booking.checkin_date %></strong></p>
+      <p><strong>to:   <%= booking.checkout_date %></strong></p>
+      <p><strong>___ Days!</strong></p>
     </div>
     <div class="user-message">
+      <p class="bold"><%= link_to booking.listing.name, listing_path(booking.listing) %></p>
       <p class="fade-font"><%= booking.trip_details %></p>
     </div>
     <div class="user-status">
