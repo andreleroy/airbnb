@@ -6,3 +6,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initAutocomplete();
 initMapbox();
+$('.carousel').carousel();
+
