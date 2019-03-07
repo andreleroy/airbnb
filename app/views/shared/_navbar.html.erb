@@ -19,7 +19,7 @@
           <%= image_tag "agustin.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" %>
           <% else %>
-          <%= image_tag current_user.photo.url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= cl_image_tag current_user.photo.url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" :gravity=>"auto", :height=>40, :quality=>"auto", :width=>40, :crop=>"fill" %>
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" %>
           <% end %>
             <li>
