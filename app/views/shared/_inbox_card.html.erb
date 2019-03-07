@@ -1,0 +1,26 @@
+<% @bookings.each do |booking| %>
+  <li class="message">
+    <div class="booker-photo">
+      <% if booking.user.photo.url.nil? %>
+        <%= image_tag "agustin.jpg", class: "user-avatar" %>
+      <% else %>
+        <%= cl_image_tag booking.user.photo.url, class: "user-avatar" %>
+      <% end %>
+    </div>
+    <div class="user">
+      <h3><%= booking.user.first_name %></h3>
+      <p class="fade-font"><%= booking.checkin_date %></p>
+    </div>
+    <div class="user-message">
+      <p class="fade-font"><%= booking.trip_details %></p>
+    </div>
+    <div class="user-status">
+      <% if booking.status.nil? %>
+        <p class="bold pending">Pending</p>
+        <% else %>
+        <p class="bold pending"><%= booking.status %></p>
+        <% end %>
+      <p>$<%= booking.total_price %></p>
+    </div>
+  </li>
+<% end %>

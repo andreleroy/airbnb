@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+
     @listing = Listing.find(params[:id])
     # @map = Listing.where.not(latitude: nil, longitude: nil)
 
@@ -12,6 +13,7 @@ class ListingsController < ApplicationController
         lng: @listing.longitude,
         lat: @listing.latitude
       }
+    @booking = Booking.new
   end
 
   def new
