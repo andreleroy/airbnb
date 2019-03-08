@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @my_trips = current_user.bookings
+    if current_user.host?
+      @my_listings = current_user.listings
+      @bookings = Booking.where(listing: @my_listings.pluck(:id))
+    end
   end
 
   def create
