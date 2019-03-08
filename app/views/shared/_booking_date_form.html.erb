@@ -3,6 +3,10 @@
 <%= f.input :checkout_date, as: :string, required: false, input_html: {class: "datepicker"} %>
 <%= f.input :guests_number %>
 <%= f.hidden_field :listing_id, value: @listing.id %>
-<%= f.button :submit, value: "Next step", class: 'airbnb-btn' %>
+<%= f.button :submit, value: "Book now ⚡", class: 'airbnb-btn' %>
 <% end %>
+<p class="small-info">You won’t be charged yet!</p>
+<br>
+<p class = "medium-info"><strong>This home is on people’s minds.</strong><br>
+It’s been viewed 500+ times in the past week.</p>
 
