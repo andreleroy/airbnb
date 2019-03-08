@@ -4,6 +4,7 @@
   border: 1px solid #dce0e0;
   padding: 0 20px;
   margin: 0;
+  margin-bottom: 40px;
 }
 
 
@@ -51,11 +52,18 @@ a {
 /* booker's photo */
 .booker-photo {
   display: block;
-  margin: 5px;
+  margin: 10px;
+  padding-right: 10px;
+  text-align: center;
   .user-avatar {
     border-radius: 50%;
     height: 50px;
     width: 50px;
+  }
+  h3 {
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-top: 5px;
   }
 }
 
@@ -63,16 +71,12 @@ a {
 
 .user {
   padding-left: 15px;
-  flex: 0 0 100px;
-  // padding-bottom: 0px;
-  // width: 100px;
-  // height: 80px;
+  flex: 0 0 180px;
+  border: 2px solid #aaaaaa;
+  height: 80px;
   p {
-    font-size: 13px;
-  }
-  h3 {
-    font-size: 14px;
-    margin-bottom: 3px;
+    font-size: 10px;
+
   }
 }
 
@@ -80,13 +84,21 @@ a {
 /* message excerpt and full message */
 .user-message {
   flex: 1 1 200px;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 80px;
+  padding: 10px;
 }
-  p {
-    font-size: 13px;
+
+p {
+  font-size: 13px;
+      margin-bottom: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    opacity: 0.8;
   }
+}
 
 /* users status and cost */
 
@@ -117,5 +129,6 @@ a {
 
 .fade-font {
   font-weight: thin;
+  font-size: 10px;
   opacity: 0.6;
 }
