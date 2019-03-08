@@ -1,29 +1,30 @@
 <div class="container">
 
-      <h1>Bookings Inbox</h1>
+  <h1>Inbox</h1>
 
-      <div class="tabs">
+  <div class="tabs">
 
-        <a href="#" class="tab active">Traveling</a>
-        <a href="#" class="tab">Hosting</a>
-        <ul class="inbox" style="padding-left: 0px,
-        list-style: none,
-        border: 1px solid #dce0e0,
-        padding: 0 20px,
-        margin: 0">
-
-
-        <%= render 'my_bookings', bookings: @bookings %>
+    <a href="#" class="tab active">Traveling</a>
+    <a href="#" class="tab">Hosting</a>
+  </div>
+    <ul class="inbox" style="padding-left: 0px,
+    list-style: none,
+    border: 1px solid #dce0e0,
+    padding: 0 20px,
+    margin: 0">
 
 
- <!--        <%# if current_user.host? %>
+    <%= render 'my_bookings', bookings: @bookings %>
 
-        <%#= render 'my_trips', trips: @my_trips %>
-        <% # end %>
- -->
-      </div>
-      </ul>
-    </div>
+
+<!--        <%# if current_user.host? %>
+
+    <%#= render 'my_trips', trips: @my_trips %>
+    <% # end %>
+-->
+
+  </ul>
+</div>
 
 
 
