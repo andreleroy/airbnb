@@ -2,6 +2,13 @@
   <div class="banner-content">
     <h1>Unforgettable trips</h1>
     <p>Discover unique homes and experiences</p>
+    <br>
+    <div>
+      <%= form_tag(listings_path, method: "get") do %>
+        <%= text_field_tag :search, nil, placeholder: "What are you looking for?", class: "form-control" %>
+        <%= submit_tag "Search", class: "btn", style: "display: none;"%>
+      <% end %>
+    </div>
     <!-- <a href="#cards-container" class="btn btn-light btn-lg">Check it out</a> -->
   </div>
 </div>
