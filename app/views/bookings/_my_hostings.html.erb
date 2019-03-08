@@ -1,4 +1,4 @@
-<% @my_trips.each do |trip| %>
+<% @bookings.each do |trip| %>
   <li class="message">
     <div class="booker-photo">
       <% if trip.user.photo.url.nil? %>
@@ -8,8 +8,8 @@
       <% end %>
     </div>
     <div class="user">
-    <h3><%= booking.user.first_name %></h3>
-      <p><%= booking.checkin_date.strftime("%A, %b %d") %></p>
+    <h3><%= trip.user.first_name %></h3>
+      <p><%= trip.checkin_date.strftime("%A, %b %d") %></p>
 
     </div>
     <div class="user-message">

@@ -25,7 +25,7 @@
             <li><%= link_to "#" do %>
               <i class="fas fa-user-circle"></i> <%= current_user.first_name %>
                 <% end %></li>
-            <li><%= link_to bookings_path do %>
+            <li><%= link_to bookings_path(tab: 'my_bookings') do %>
               <i class="far fa-envelope"></i> Inbox
               <% end %></li>
             <li>
@@ -57,7 +57,7 @@
           <li><%= link_to "#" do %>
               <i class="fas fa-user-circle"></i> <%= current_user.first_name %>
                 <% end %></li>
-          <li><%= link_to bookings_path do %>
+          <li><%= link_to bookings_path(tab: 'my_bookings') do %>
               <i class="far fa-envelope"></i> Inbox
               <% end %></li>
           <li><%= link_to new_listing_path do %>

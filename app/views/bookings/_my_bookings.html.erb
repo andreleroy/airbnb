@@ -11,12 +11,13 @@
 
     </div>
     <div class="user">
-      <h3><%= booking.user.first_name %></h3>
       <p><%= booking.checkin_date.strftime("%A, %b %d") %></p>
       <p><%= booking.guests_number %> Travellers</p>
     </div>
     <div class="user-message">
       <p class="bold"><%= booking.listing.name %></p>
+      <p><%= booking.listing.address %></p>
+      <p></p>
       <p class="fade-font"><%= booking.trip_details %></p>
     </div>
     <div class="user-status">

@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
   def index
-    @my_trips = current_user.bookings
-    if current_user.host?
-      @my_listings = current_user.listings
-      @bookings = Booking.where(listing: @my_listings.pluck(:id))
+    @tab = params[:tab]
+    if current_user.host? && @tab == 'my_hostings'
+      @bookings = current_user.hostings
+    else
+      @bookings = current_user.bookings
     end
   end
 
@@ -26,7 +27,7 @@ class BookingsController < ApplicationController
 
     @booking.update(trip_details_params)
     if @booking.save
-      redirect_to bookings_path
+      redirect_to bookings_path(tab: 'my_bookings')
     else
       render :new
     end

@@ -5,8 +5,11 @@
 
   <div class="tabs">
 
-    <a href="#" class="tab active">Traveling</a>
-    <a href="#" class="tab">Hosting</a>
+    <%= link_to "Travelling", bookings_path(tab: 'my_bookings'), class: "#{'active' if @tab == 'my_bookings'} tab" %>
+  <% if current_user.host? %>
+    <%= link_to "Hosting", bookings_path(tab: 'my_hostings'), class: "#{'active' if @tab == 'my_hostings'} tab" %>
+  <% end %>
+
   </div>
     <ul class="inbox" style="padding-left: 0px,
     list-style: none,
@@ -14,16 +17,7 @@
     padding: 0 20px,
     margin: 0">
 
-
-    <%= render 'my_bookings', bookings: @bookings %>
-
-
-<!--        <%# if current_user.host? %>
-
-    <%#= render 'my_trips', trips: @my_trips %>
-    <% # end %>
--->
-
+    <%= render @tab, bookings: @bookings %>
   </ul>
 </div>
 

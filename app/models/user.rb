@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :listings
   has_many :bookings
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,5 +14,9 @@ class User < ApplicationRecord
 
   def traveller?
     bookings.any?
+  end
+
+  def hostings
+    listings.map { |listing| listing.bookings }.flatten
   end
 end
