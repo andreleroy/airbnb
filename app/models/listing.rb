@@ -9,6 +9,7 @@ class Listing < ApplicationRecord
   validates :capacity, :nightly_rate, numericality: { only_integer: true }
 
 
+
   include PgSearch
   pg_search_scope :search,
     against: [ :name, :description , :address],
@@ -23,5 +24,10 @@ class Listing < ApplicationRecord
     end
   end
 
+
+
+  def my_listing?
+    listing.user == current_user
+  end
 
 end

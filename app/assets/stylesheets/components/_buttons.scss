@@ -1,0 +1,40 @@
+.airbnb-btn {
+  background-color: #FF5862;
+  color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  &:hover {
+    color: black;
+  } a {
+    text-decoration: none;
+    color: #ffffff;
+  } a:hover {
+    color: black;
+  }
+
+}
+
+.airbnb-btn-secondary {
+  background-color: #ffffff;
+  color: #FF5862;
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #FF5862;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  a:hover {
+    color: black;
+  }
+}
+
+
+.button-padding {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
