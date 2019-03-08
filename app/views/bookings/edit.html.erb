@@ -1,1 +1,9 @@
-<%= render 'shared/booking_details_form' %>
+<div class="container">
+  <h2>Your booking request:</h2>
+  <p><strong>Check-in date:</strong> <%= @booking.checkin_date.strftime("%A, %b %d") %><p>
+  <p><strong>Check-out date:</strong> <%= @booking.checkout_date.strftime("%A, %b %d") %><p>
+  <p><strong>Number of guests:</strong> <%= @booking.guests_number %><p>
+  <p><strong>Total price:</strong> <%= (@booking.checkout_date - @booking.checkin_date).to_i * @booking.listing.nightly_rate.to_i %> €<p>
+
+  <%= render 'shared/booking_details_form' %>
+</div>

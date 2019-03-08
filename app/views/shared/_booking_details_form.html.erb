@@ -1,9 +1,6 @@
-<div class="container">
-  <%= simple_form_for @booking do |f| %>
-  <%= f.input :trip_details, as: :text, placeholder: "Tell your host more about your trip" %>
+<%= simple_form_for @booking do |f| %>
+<%= f.input :trip_details, as: :text, placeholder: "Tell your host more about your trip" %>
 
-  <%= f.button :submit, value: "Complete booking" %>
-  <% end %>
+<%= f.button :submit, value: "Complete booking" %>
+<% end %>
 
-
-</div>
