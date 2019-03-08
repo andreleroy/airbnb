@@ -1,5 +1,5 @@
 <div class="cards">
-  <% @listings.each do |listing| %>
+  <% @listings.each do |listing| unless listing.my_listing?%>
     <%= link_to listing_path(listing), :action => 'go' do %>
     <div class="card-trip">
       <% if listing.photos.any? %>
