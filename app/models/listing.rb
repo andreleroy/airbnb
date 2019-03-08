@@ -8,7 +8,26 @@ class Listing < ApplicationRecord
   validates :property_type, presence: true, inclusion: { in: ["Apartment", "House", "Secondary unit", "Unique space", "Bed and breakfast", "Boutique hotel"] }
   validates :capacity, :nightly_rate, numericality: { only_integer: true }
 
+
+
+  include PgSearch
+  pg_search_scope :search,
+    against: [ :name, :description , :address],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
+  def self.perform_search(keyword)
+    if keyword.present?
+    then Listing.search(keyword)
+    else Listing.all
+    end
+  end
+
+
+
   def my_listing?
     listing.user == current_user
   end
+
 end
