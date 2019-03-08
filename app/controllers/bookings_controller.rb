@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @booking.total_price = (@booking.checkout_date - @booking.checkin_date).to_i * @booking.listing.nightly_rate.to_i
     @booking.save!
     redirect_to edit_booking_path(@booking)
     # redirect_to edit_booking_path(@booking)
