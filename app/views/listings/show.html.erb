@@ -10,6 +10,10 @@
       <p><strong>Address:</strong> <%= @listing.address %></p>
       </div>
       <div class="secondary-info">
+        <div>
+          <%= image_tag @listing.user.photo.url, class: 'avatar-show' %>
+          <%= @listing.user.first_name %>
+          </div>
         <h3>About the property...</h3>
         <ul>
           <li><p>Traditionally styled, bright and beautiful flat</p></li>
