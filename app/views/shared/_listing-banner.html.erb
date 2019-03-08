@@ -11,7 +11,7 @@
     <div class="carousel-inner" role="listbox">
       <% @listing.photos.each_with_index do |photo, index| %>
         <div class="item <%= 'active' if index == 0 %>">
-          <%= cl_image_tag photo.url, class: "image-size" %>
+          <%= cl_image_tag photo.url, class: "image-size", :gravity=>"auto", :height=>1143, :quality=>"auto", :width=>2763, :crop=>"fill" %>
           <div class="carousel-caption">
           </div>
         </div>
