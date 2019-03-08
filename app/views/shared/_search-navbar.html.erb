@@ -39,6 +39,9 @@
                 <i class="fas fa-user-circle"></i> <%= current_user.first_name %>
               <% end %>
             </li>
+            <li><%= link_to bookings_path(tab: 'my_bookings') do %>
+              <i class="far fa-envelope"></i> Inbox
+              <% end %></li>
             <li>
               <%= link_to new_listing_path do %>
                 <i class="fas fa-home"></i> Post a flat
@@ -63,9 +66,26 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li>
+          <%= link_to "#" do %>
+            <i class="fas fa-user-circle"></i> <%= current_user.first_name %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to bookings_path(tab: 'my_bookings') do %>
+            <i class="far fa-envelope"></i> Inbox
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_listing_path do %>
+            <i class="fas fa-home"></i> Post a flat
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
