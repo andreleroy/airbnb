@@ -5,7 +5,7 @@
         <%= image_tag "agustin.jpg", class: "user-avatar" %>
       <% else %>
       <%= link_to listing_path(booking.listing) do %>
-        <%= cl_image_tag booking.listing.photos.first.url, class: "user-avatar" %>
+        <%= cl_image_tag booking.listing.photos.first.url, class: "listing_photo" %>
         <% end %>
       <% end %>
 
@@ -16,16 +16,16 @@
     </div>
     <div class="user-message">
       <p class="bold"><%= booking.listing.name %></p>
-      <p><%= booking.listing.address %></p>
+      <p>Address:<%= booking.listing.address %></p>
       <p></p>
-      <p class="fade-font"><%= booking.trip_details %></p>
+      <p class="fade-font">Your Message: <%= booking.trip_details %></p>
     </div>
     <div class="user-status">
       <% if booking.status.nil? %>
         <p class="bold pending">Pending</p>
         <% else %>
-        <p class="bold pending"><%= booking.status %></p>
-        <% end %>
+        <p class="bold pending"><%= trip.status %></p>
+      <% end %>
       <p>$<%= booking.total_price %></p>
     </div>
   </li>
