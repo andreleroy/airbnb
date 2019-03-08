@@ -4,17 +4,19 @@
       <% if booking.user.photo.url.nil? %>
         <%= image_tag "agustin.jpg", class: "user-avatar" %>
       <% else %>
-        <%= cl_image_tag booking.user.photo.url, class: "user-avatar" %>
+      <%= link_to listing_path(booking.listing) do %>
+        <%= cl_image_tag booking.listing.photos.first.url, class: "user-avatar" %>
+        <% end %>
       <% end %>
-      <h3><%= booking.user.first_name %></h3>
+
     </div>
     <div class="user">
-      <p><strong>from: <%= booking.checkin_date %></strong></p>
-      <p><strong>to:   <%= booking.checkout_date %></strong></p>
-      <p><strong>___ Days!</strong></p>
+      <h3><%= booking.user.first_name %></h3>
+      <p><%= booking.checkin_date.strftime("%A, %b %d") %></p>
+      <p><%= booking.guests_number %> Travellers</p>
     </div>
     <div class="user-message">
-      <p class="bold"><%= link_to booking.listing.name, listing_path(booking.listing) %></p>
+      <p class="bold"><%= booking.listing.name %></p>
       <p class="fade-font"><%= booking.trip_details %></p>
     </div>
     <div class="user-status">
