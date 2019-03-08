@@ -52,13 +52,17 @@ a {
 /* booker's photo */
 .booker-photo {
   display: block;
-  margin: 10px;
+  // margin: 10px;
   padding-right: 10px;
   text-align: center;
   .user-avatar {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
+  }
+  .listing_photo {
+    height: 80px;
+    width: 80px;
   }
 
 }
@@ -108,9 +112,10 @@ a {
 /* users status and cost */
 
 .user-status {
-  flex: 0 0 15px;
+  flex: 0 0 60px;
   padding-right: 10px;
   font-weight: bold;
+  text-align: center;
 }
 
 .pending {
@@ -120,10 +125,12 @@ a {
 
 .accepted {
   color: green;
+  font-size: 25px;
 }
 
 .declined {
   color: red;
+  font-size: 25px;
 }
 
 /* extra font styling */

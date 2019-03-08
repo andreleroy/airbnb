@@ -10,6 +10,7 @@
     <div class="user">
     <h3><%= trip.user.first_name %></h3>
       <p><%= trip.checkin_date.strftime("%A, %b %d") %></p>
+      <p><%= trip.guests_number %> Travellers</p>
 
     </div>
     <div class="user-message">
@@ -17,11 +18,9 @@
       <p class="fade-font"><%= trip.trip_details %></p>
     </div>
     <div class="user-status">
-      <% if trip.status.nil? %>
-        <p class="bold pending">Pending</p>
-        <% else %>
-        <p class="bold pending"><%= trip.status %></p>
-        <% end %>
+      <p>
+        <%= link_to raw('<i class="fas fa-check-square"></i>'), "#" , class: 'bold accepted', style: 'color: green' %> <%= link_to raw('<i class="fas fa-times"></i>'), "#" , class: 'bold declined', style: 'color: red' %>
+      </p>
       <p>$<%= trip.total_price %></p>
     </div>
   </li>
