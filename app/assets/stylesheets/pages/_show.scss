@@ -6,7 +6,7 @@
 .bookingform {
   width: 30%;
   height: 530px;
-  border: 2px solid #aaaaaa;
+  border: 1px solid #e4e4e4;
   padding: 20px;
   margin: 20px;
   margin-bottom: 30px;
@@ -41,3 +41,13 @@
   letter-spacing: 1.2px;
   }
 }
+
+.small-info {
+  font-size: 12px;
+  display: inline;
+}
+
+.medium-info {
+  font-size: 14px;
+}
+
