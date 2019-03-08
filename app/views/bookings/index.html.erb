@@ -2,17 +2,25 @@
 
       <h1>Bookings Inbox</h1>
 
-
       <div class="tabs">
-        <a href="#" class="tab active">Traveling</a>
-        <a href="#" class="tab">Hosting</a>
-      </div>
 
-      <ul class="inbox" style="padding-left: 0px,
+        <a href="#" class="tab active">Traveling</a>
+
+        <ul class="inbox" style="padding-left: 0px,
         list-style: none,
         border: 1px solid #dce0e0,
         padding: 0 20px,
         margin: 0">
+        if
         <%= render 'shared/inbox_card' %>
       </ul>
     </div>
+
+
+        <% if current_user.host? %>
+        <a href="#" class="tab">Hosting</a>
+        <%= render 'my_trips', trips: @my_trips %>
+
+      </div>
+
+
